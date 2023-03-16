@@ -29,7 +29,7 @@ done
 
 checkver(){
   running_version=$(grep "ver=\"[0-9]\{4\}\.[0-9]\{2\}\.[0-9]\{2\}\.[0-9]\{2\}\.[0-9]\{2\}" "$0" | awk -F '"' '{print $2}')
-  curl -L https://gitlab.com/spiritysdx/Oracle-server-keep-alive-script/-/raw/main/oalive.sh -o oalive1.sh && chmod +x oalive1.sh
+  curl -L https://raw.githubusercontents.com/lg-yyds/Oracle-server-keep/main/oalive.sh -o oalive1.sh && chmod +x oalive1.sh
   downloaded_version=$(grep "ver=\"[0-9]\{4\}\.[0-9]\{2\}\.[0-9]\{2\}\.[0-9]\{2\}\.[0-9]\{2\}" oalive1.sh | awk -F '"' '{print $2}')
   if [ "$running_version" != "$downloaded_version" ]; then
     _yellow "更新脚本从 $ver 到 $downloaded_version"
@@ -76,10 +76,10 @@ boinc() {
 }
 
 calculate() {
-    curl -L https://gitlab.com/lg-yyds/Oracle-server-keep/-/raw/main/cpu-limit.sh -o cpu-limit.sh && chmod +x cpu-limit.sh
+    curl -L https://raw.githubusercontents.com/lg-yyds/Oracle-server-keep/main/cpu-limit.sh -o cpu-limit.sh && chmod +x cpu-limit.sh
     mv cpu-limit.sh /usr/local/bin/cpu-limit.sh 
     chmod +x /usr/local/bin/cpu-limit.sh
-    curl -L https://gitlab.com/lg-yyds/Oracle-server-keep/-/raw/main/cpu-limit.service -o cpu-limit.service && chmod +x cpu-limit.service
+    curl -L https://raw.githubusercontents.com/lg-yyds/Oracle-server-keep/main/cpu-limit.service -o cpu-limit.service && chmod +x cpu-limit.service
     mv cpu-limit.service /etc/systemd/system/cpu-limit.service
     line_number=7
     total_cores=0
@@ -108,10 +108,10 @@ calculate() {
 }
 
 memory(){
-    curl -L https://gitlab.com/lg-yyds/Oracle-server-keep/-/raw/main/memory-limit.sh -o memory-limit.sh && chmod +x memory-limit.sh
+    curl -L https://raw.githubusercontents.com/lg-yyds/Oracle-server-keep/main/memory-limit.sh -o memory-limit.sh && chmod +x memory-limit.sh
     mv memory-limit.sh /usr/local/bin/memory-limit.sh
     chmod +x /usr/local/bin/memory-limit.sh
-    curl -L https://gitlab.com/lg-yyds/Oracle-server-keep/-/raw/main/memory-limit.service -o memory-limit.service && chmod +x memory-limit.service
+    curl -L https://raw.githubusercontents.com/lg-yyds/Oracle-server-keep/main/memory-limit.service -o memory-limit.service && chmod +x memory-limit.service
     mv memory-limit.service /etc/systemd/system/memory-limit.service
     systemctl daemon-reload
     systemctl enable memory-limit.service
@@ -159,12 +159,12 @@ bandwidth(){
       rm -rf README.md LICENSE > /dev/null 2>&1
       rm -rf speedtest-go_1.5.2_Linux.tar.gz > /dev/null 2>&1
     fi
-    curl -L https://gitlab.com/lg-yyds/Oracle-server-keep/-/raw/main/bandwidth_occupier.sh -o bandwidth_occupier.sh && chmod +x bandwidth_occupier.sh
+    curl -L https://raw.githubusercontents.com/lg-yyds/Oracle-server-keep/main/bandwidth_occupier.sh -o bandwidth_occupier.sh && chmod +x bandwidth_occupier.sh
     mv bandwidth_occupier.sh /usr/local/bin/bandwidth_occupier.sh
     chmod +x /usr/local/bin/bandwidth_occupier.sh
-    curl -L https://gitlab.com/lg-yyds/Oracle-server-keep/-/raw/main/bandwidth_occupier.timer -o bandwidth_occupier.timer && chmod +x bandwidth_occupier.timer
+    curl -L https://raw.githubusercontents.com/lg-yyds/Oracle-server-keep/main/bandwidth_occupier.timer -o bandwidth_occupier.timer && chmod +x bandwidth_occupier.timer
     mv bandwidth_occupier.timer /etc/systemd/system/bandwidth_occupier.timer
-    curl -L https://gitlab.com/lg-yyds/Oracle-server-keep/-/raw/main/bandwidth_occupier.service -o bandwidth_occupier.service && chmod +x bandwidth_occupier.service
+    curl -L https://raw.githubusercontents.com/lg-yyds/Oracle-server-keep/main/bandwidth_occupier.service -o bandwidth_occupier.service && chmod +x bandwidth_occupier.service
     mv bandwidth_occupier.service /etc/systemd/system/bandwidth_occupier.service
     reading "需要自定义带宽占用的设置吗? (y/[n]) " answer
     if [ "$answer" == "y" ]; then
