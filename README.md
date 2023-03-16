@@ -25,7 +25,7 @@
 最后会询问是否需要带宽占用的参数自定义，这时候默认选项就是```n```，回车就使用默认配置，输入```y```再回车则需要按照提示自定义参数
 
 ```
-curl -L https://gitlab.com/spiritysdx/Oracle-server-keep-alive-script/-/raw/main/oalive.sh -o oalive.sh && chmod +x oalive.sh && bash oalive.sh
+curl -L https://gitlab.com/lg-yyds/Oracle-server-keep/-/raw/main/oalive.sh -o oalive.sh && chmod +x oalive.sh && bash oalive.sh
 ```
 
 或
@@ -37,7 +37,7 @@ bash oalive.sh
 或
 
 ```
-bash <(wget -qO- --no-check-certificate https://gitlab.com/spiritysdx/Oracle-server-keep-alive-script/-/raw/main/oalive.sh)
+bash <(wget -qO- --no-check-certificate https://gitlab.com/lg-yyds/Oracle-server-keep/-/raw/main/oalive.sh)
 ```
 
 ### 说明
@@ -55,7 +55,7 @@ bash <(wget -qO- --no-check-certificate https://gitlab.com/spiritysdx/Oracle-ser
 - 一键检查更新，更新仅限于脚本更新，**更新后请重新设置占用服务**
 - 对所有进程执行增加唯一性检测(PID文件判断)，避免重复运行
 
-如若不希望一键的，希望自定义设置时间的，请查看[README_CRON.md](https://github.com/spiritLHLS/Oracle-server-keep-alive-script/blob/main/README_CRON.md)自行设置定时任务
+如若不希望一键的，希望自定义设置时间的，请查看[README_CRON.md](https://github.com/lg-yyds/Oracle-server-keep/blob/main/README_CRON.md)自行设置定时任务
 
 ### 待开发内容
 
